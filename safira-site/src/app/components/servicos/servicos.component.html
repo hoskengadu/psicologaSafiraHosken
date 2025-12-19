@@ -1,0 +1,15 @@
+<section class="servicos-section" *ngIf="content$ | async as content">
+  <div class="container">
+    <h1 class="section-title">{{ content.servicos.title }}</h1>
+
+    <div class="servicos-grid">
+      <div class="servico-card" *ngFor="let servico of content.servicos.items">
+        <div class="servico-icon">
+          <span>💙</span>
+        </div>
+        <h3 class="servico-title">{{ servico.title }}</h3>
+        <p class="servico-description">{{ servico.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

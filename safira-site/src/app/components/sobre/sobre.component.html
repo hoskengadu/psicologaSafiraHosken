@@ -1,0 +1,19 @@
+<section class="sobre-section" *ngIf="content$ | async as content">
+  <div class="container">
+    <div class="sobre-content">
+      <div class="sobre-text">
+        <h1 class="section-title">{{ content.sobre.title }}</h1>
+        <div class="sobre-description" [innerHTML]="content.sobre.content"></div>
+      </div>
+
+      <div class="sobre-image">
+        <div class="image-placeholder">
+          <div class="image-content">
+            <span class="image-icon">🌺</span>
+            <p>Ambiente Profissional</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

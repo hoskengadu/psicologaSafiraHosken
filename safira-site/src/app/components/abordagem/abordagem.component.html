@@ -1,0 +1,18 @@
+<section class="abordagem-section" *ngIf="content$ | async as content">
+  <div class="container">
+    <div class="abordagem-header">
+      <h1 class="section-title">{{ content.abordagem.title }}</h1>
+      <p class="section-description">{{ content.abordagem.content }}</p>
+    </div>
+
+    <div class="metodologias-grid">
+      <div class="metodologia-card" *ngFor="let metodologia of content.abordagem.metodologias">
+        <div class="metodologia-icon">
+          <span>🌱</span>
+        </div>
+        <h3 class="metodologia-name">{{ metodologia.name }}</h3>
+        <p class="metodologia-description">{{ metodologia.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<section class="hero-section" *ngIf="content$ | async as content">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="highlight">{{ content.home.title }}</span>
+        </h1>
+        <h2 class="hero-subtitle">{{ content.home.subtitle }}</h2>
+        <p class="hero-description">{{ content.home.description }}</p>
+
+        <div class="cta-buttons">
+          <a routerLink="/contato" class="btn btn-primary">
+            Agendar Consulta
+          </a>
+          <a routerLink="/sobre" class="btn btn-secondary">
+            Saiba Mais
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-placeholder">
+          <div class="image-content">
+            <span class="image-icon">🌸</span>
+            <p>Espaço Acolhedor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Por que Escolher a <span class="highlight">Psicologia</span>?</h2>
+      <p class="section-subtitle">Descubra os benefícios de um acompanhamento psicológico profissional</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💝</div>
+        <h3 class="feature-title">Acolhimento</h3>
+        <p class="feature-description">Um espaço seguro e livre de julgamentos para você se expressar.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3 class="feature-title">Personalizado</h3>
+        <p class="feature-description">Abordagem única e personalizada para suas necessidades específicas.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h3 class="feature-title">Crescimento</h3>
+        <p class="feature-description">Desenvolvimento pessoal e emocional para uma vida mais plena.</p>
+      </div>
+    </div>
+  </div>
+</section>

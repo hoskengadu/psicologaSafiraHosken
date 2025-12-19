@@ -1,0 +1,44 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a routerLink="/home" class="logo">
+        <span class="logo-text">Safira Hosken</span>
+        <span class="logo-subtitle"> Psicóloga</span>
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="nav-menu" [class.active]="isMobileMenuOpen">
+      <li class="nav-item">
+        <a routerLink="/home" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/sobre" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
+          Sobre
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/servicos" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
+          Serviços
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/abordagem" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
+          Abordagem
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contato" routerLinkActive="active" class="nav-link cta" (click)="closeMobileMenu()">
+          Contato
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

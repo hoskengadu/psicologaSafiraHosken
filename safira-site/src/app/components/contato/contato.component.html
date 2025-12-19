@@ -1,0 +1,112 @@
+<section class="contato-section" *ngIf="content$ | async as content">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
+      <p class="section-subtitle">Estou aqui para ajudá-la em sua jornada de autoconhecimento e bem-estar</p>
+    </div>
+
+    <div class="contato-content">
+      <div class="contato-info">
+        <div class="info-card">
+          <div class="info-icon">📱</div>
+          <h3 class="info-title">WhatsApp</h3>
+          <p class="info-text">
+            <a href="https://wa.me/5521975366990" 
+               target="_blank" 
+               class="info-link">
+              {{ content.contato.telefone }}
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <h3 class="info-title">E-mail</h3>
+          <p class="info-text">
+            <a href="mailto:{{ content.contato.email }}" class="info-link">
+              {{ content.contato.email }}
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3 class="info-title">Localização</h3>
+          <p class="info-text">{{ content.contato.endereco }}</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <h3 class="info-title">Horário de Atendimento</h3>
+          <p class="info-text horarios">{{ content.contato.horarios }}</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 class="form-title">Envie sua Mensagem</h3>
+        <form (ngSubmit)="onSubmit($event)">
+          <div class="form-group">
+            <label for="nome" class="form-label">Nome completo *</label>
+            <input type="text" 
+                   id="nome" 
+                   name="nome" 
+                   class="form-input" 
+                   required 
+                   placeholder="Digite seu nome completo">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">E-mail *</label>
+            <input type="email" 
+                   id="email" 
+                   name="email" 
+                   class="form-input" 
+                   required 
+                   placeholder="seu@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" 
+                   id="telefone" 
+                   name="telefone" 
+                   class="form-input" 
+                   placeholder="(21) 99999-9999">
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem" class="form-label">Mensagem *</label>
+            <textarea id="mensagem" 
+                      name="mensagem" 
+                      class="form-textarea" 
+                      required 
+                      rows="5" 
+                      placeholder="Conte-me como posso ajudá-la..."></textarea>
+          </div>
+
+          <button type="submit" 
+                  class="submit-button" 
+                  [disabled]="isSubmitting"
+                  [class.submitting]="isSubmitting">
+            <span class="submit-text" *ngIf="!isSubmitting">Enviar Mensagem</span>
+            <span class="submit-text" *ngIf="isSubmitting">Enviando...</span>
+            <span class="submit-icon" *ngIf="!isSubmitting">→</span>
+            <span class="submit-spinner" *ngIf="isSubmitting">⏳</span>
+          </button>
+
+          <!-- Feedback de envio -->
+          <div class="submit-feedback" *ngIf="submitMessage" [class]="submitMessage.includes('✅') ? 'success' : (submitMessage.includes('❌') ? 'error' : 'warning')">
+            <span class="feedback-message">{{ submitMessage }}</span>
+          </div>
+        </form>
+
+        <div class="form-footer">
+          <p class="privacy-note">
+            <span class="lock-icon">🔒</span>
+            Suas informações são tratadas com total confidencialidade
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
