@@ -28,8 +28,10 @@ export class ContatoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('EmailJS Config:', environment.emailjs);
     if (environment.emailjs.publicKey && environment.emailjs.publicKey !== 'YOUR_PUBLIC_KEY_HERE') {
       emailjs.init(environment.emailjs.publicKey);
+      console.log('EmailJS initialized with key:', environment.emailjs.publicKey.substring(0, 5) + '...');
     }
   }
 
@@ -70,12 +72,18 @@ export class ContatoComponent implements OnInit {
     this.isSubmitting = true;
     this.submitMessage = 'Enviando mensagem...';
 
+    console.log('Sending email with params:', templateParams);
+    console.log('Service ID:', environment.emailjs.serviceId);
+    console.log('Template ID:', environment.emailjs.templateId);
+
     emailjs.send(environment.emailjs.serviceId, environment.emailjs.templateId, templateParams)
-      .then(() => {
+      .then((result) => {
+        console.log('Email sent successfully:', result);
         this.showModalMessage('Mensagem Enviada!', 'Sua mensagem foi enviada com sucesso! Safira entrará em contato em breve.', 'success');
         form.reset();
       })
       .catch((error) => {
+        console.error('Email send error:', error);
         const message = error.status === 400 ? 'Erro de configuração do sistema.' : 
                        error.status === 401 ? 'Credenciais inválidas.' : 
                        'Erro temporário. Tente novamente.';
@@ -93,11 +101,13 @@ export class ContatoComponent implements OnInit {
   }
 
   private showModalMessage(title: string, message: string, type: 'success' | 'error' | 'warning'): void {
+    console.log('Opening modal:', { title, message, type });
     this.modalTitle = title;
     this.modalMessage = message;
     this.modalType = type;
     this.modalIcon = type === 'success' ? '✅' : type === 'error' ? '❌' : '⚠️';
     this.showModal = true;
+    console.log('Modal state:', { showModal: this.showModal, modalTitle: this.modalTitle });
   }
 
   closeModal(): void {
@@ -110,5 +120,11 @@ export class ContatoComponent implements OnInit {
     if (event.target === event.currentTarget) {
       this.closeModal();
     }
+  }
+
+  // Método de teste temporário
+  testModal(): void {
+    console.log('Testing modal...');
+    this.showModalMessage('Teste da Modal', 'Esta é uma mensagem de teste para verificar se a modal está funcionando corretamente.', 'success');
   }
 }
