@@ -53,7 +53,7 @@ export class ContatoComponent implements OnInit {
       return;
     }
 
-    if (!environment.emailjs.publicKey || environment.emailjs.publicKey === 'YOUR_PUBLIC_KEY_HERE') {
+    if (!environment.emailjs.publicKey || !environment.emailjs.serviceId || !environment.emailjs.templateId) {
       this.showModalMessage('Sistema Temporariamente Indisponível', 'Sistema de email em configuração. Entre em contato pelo WhatsApp.', 'warning');
       return;
     }

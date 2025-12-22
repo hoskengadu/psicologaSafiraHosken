@@ -1,4 +1,4 @@
-<section class="sobre-section" *ngIf="content$ | async as content">
+<section class="sobre-section" role="main" *ngIf="content$ | async as content">
   <div class="container">
     <div class="sobre-content">
       <div class="sobre-text">
@@ -9,7 +9,7 @@
       <div class="sobre-image">
         <div class="image-placeholder">
           <div class="image-content">
-            <span class="image-icon">🌺</span>
+            <span class="image-icon" role="img" aria-label="Flor decorativa">🌺</span>
             <p>Ambiente Profissional</p>
           </div>
         </div>
