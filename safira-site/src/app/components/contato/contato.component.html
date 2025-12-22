@@ -110,3 +110,32 @@
     </div>
   </div>
 </section>
+
+<!-- Modal de Feedback -->
+<div class="modal-overlay" *ngIf="showModal" (click)="onModalBackdropClick($event)">
+  <div class="modal-container" [ngClass]="'modal-' + modalType">
+    <div class="modal-header">
+      <span class="modal-icon">{{ modalIcon }}</span>
+      <h3 class="modal-title">{{ modalTitle }}</h3>
+      <button class="modal-close" (click)="closeModal()" aria-label="Fechar">
+        <span>✕</span>
+      </button>
+    </div>
+    
+    <div class="modal-body">
+      <p class="modal-message">{{ modalMessage }}</p>
+    </div>
+    
+    <div class="modal-footer">
+      <button class="modal-button btn-primary" (click)="closeModal()">
+        Entendi
+      </button>
+      <a *ngIf="modalType === 'error' || modalType === 'warning'" 
+         href="https://wa.me/5521975366990" 
+         target="_blank" 
+         class="modal-button btn-whatsapp">
+        📱 Ir para WhatsApp
+      </a>
+    </div>
+  </div>
+</div>

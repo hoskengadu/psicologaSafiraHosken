@@ -2,9 +2,9 @@ export const environment = {
   production: false,
   contactEmail: 'safiralinhares.psi@gmail.com',
   emailjs: {
-    serviceId: 'service_8k9m2x1',
-    templateId: 'template_7h5j4p2',
-    publicKey: 'zYx9wVu8tSr7qPo6', // Chave pública do EmailJS
-    testMode: true // Ativar modo de teste
+    serviceId: 'service_yo8desl',
+    templateId: 'template_wfovh9h',
+    publicKey: '8lgzQgygxO3AYDiNR', 
+    testMode: true 
   }
 };

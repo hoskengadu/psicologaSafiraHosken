@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ContentService, SiteContent } from '../../services/content.service';
@@ -10,12 +10,10 @@ import { ContentService, SiteContent } from '../../services/content.service';
   templateUrl: './sobre.component.html',
   styleUrls: ['./sobre.component.scss']
 })
-export class SobreComponent implements OnInit {
+export class SobreComponent {
   content$: Observable<SiteContent>;
 
   constructor(private contentService: ContentService) {
     this.content$ = this.contentService.content$;
   }
-
-  ngOnInit(): void {}
 }
