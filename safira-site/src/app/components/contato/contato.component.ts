@@ -34,7 +34,7 @@ export class ContatoComponent implements OnInit {
       console.log('EmailJS initialized with key:', environment.emailjs.publicKey.substring(0, 5) + '...');
     }
   }
-  
+
 
   onSubmit(event: Event): void {
     event.preventDefault();
@@ -121,11 +121,5 @@ export class ContatoComponent implements OnInit {
     if (event.target === event.currentTarget) {
       this.closeModal();
     }
-  }
-
-  // Método de teste temporário
-  testModal(): void {
-    console.log('Testing modal...');
-    this.showModalMessage('Teste da Modal', 'Esta é uma mensagem de teste para verificar se a modal está funcionando corretamente.', 'success');
   }
 }

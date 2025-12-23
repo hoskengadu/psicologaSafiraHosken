@@ -7,10 +7,18 @@
   border-bottom: 1px solid var(--gray-200);
   box-shadow: var(--shadow-sm);
 
-  .navbar {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-lg) var(--spacing-xl);
+    padding: 0 var(--spacing-xl);
+
+    @media (max-width: 768px) {
+      padding: 0 var(--spacing-md);
+    }
+  }
+
+  .navbar {
+    padding: var(--spacing-lg) 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,7 +80,7 @@
 @media (max-width: 992px) {
   .header {
     .navbar {
-      padding: var(--spacing-lg) var(--spacing-md);
+      padding: var(--spacing-md) 0;
       
       .nav-menu {
         gap: var(--spacing-lg);
@@ -84,11 +92,21 @@
 @media (max-width: 768px) {
   .header {
     .navbar {
-      padding: var(--spacing-md);
+      padding: var(--spacing-md) 0;
       position: relative;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .nav-brand {
+        flex: 1;
+        z-index: 10001;
+      }
 
       .logo {
         font-size: var(--text-xl);
+        display: block;
       }
 
       .nav-menu {
@@ -145,6 +163,7 @@
 
       .mobile-menu-btn {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 44px;
@@ -153,21 +172,49 @@
         border: 2px solid var(--primary-200);
         border-radius: var(--radius-md);
         color: var(--primary-600);
-        font-size: 1.2rem;
         cursor: pointer;
         transition: all var(--transition-fast);
         z-index: 10000;
         position: relative;
+        gap: 4px;
+
+        .hamburger-line {
+          width: 20px;
+          height: 2px;
+          background: var(--primary-600);
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          transform-origin: center;
+        }
 
         &:hover {
           background: var(--primary-100);
           border-color: var(--primary-300);
+
+          .hamburger-line {
+            background: var(--primary-700);
+          }
         }
 
         &.active {
           background: var(--primary-500);
-          color: white;
           border-color: var(--primary-600);
+
+          .hamburger-line {
+            background: white;
+
+            &:first-child {
+              transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
+
+            &:last-child {
+              transform: rotate(-45deg) translate(6px, -6px);
+            }
+          }
         }
       }
     }
@@ -177,10 +224,19 @@
 @media (max-width: 576px) {
   .header {
     .navbar {
-      padding: var(--spacing-sm) var(--spacing-md);
+      padding: var(--spacing-sm) 0;
       
       .logo {
         font-size: var(--text-lg);
+      }
+
+      .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+
+        .hamburger-line {
+          width: 18px;
+        }
       }
     }
   }
