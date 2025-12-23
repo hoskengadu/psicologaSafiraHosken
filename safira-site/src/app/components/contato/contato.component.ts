@@ -34,6 +34,7 @@ export class ContatoComponent implements OnInit {
       console.log('EmailJS initialized with key:', environment.emailjs.publicKey.substring(0, 5) + '...');
     }
   }
+  
 
   onSubmit(event: Event): void {
     event.preventDefault();
