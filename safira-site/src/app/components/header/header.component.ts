@@ -14,9 +14,17 @@ export class HeaderComponent {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    
+    // Previne scroll do body quando menu está aberto
+    if (this.isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+    document.body.style.overflow = '';
   }
 }
