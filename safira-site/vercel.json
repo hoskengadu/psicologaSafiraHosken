@@ -1,4 +1,7 @@
 {
+  "buildCommand": "bash build.sh",
+  "outputDirectory": "dist/safira-site/browser",
+  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/(.*)",

@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "npx ng build",
+    "build:prod": "npx ng build --configuration production",
     "build:vercel": "npx ng build --configuration production",
+    "build:custom": "bash build.sh",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:safira-site": "node dist/safira-site/server/server.mjs"
