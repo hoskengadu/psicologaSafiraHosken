@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npx ng build",
+  "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist/safira-site/browser",
   "installCommand": "npm install",
   "rewrites": [
