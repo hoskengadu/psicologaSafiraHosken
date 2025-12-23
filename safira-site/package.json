@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npx ng build",
+    "build": "echo 'Use build:prod instead' && exit 1",
     "build:prod": "npx ng build --configuration production",
     "build:vercel": "npx ng build --configuration production",
     "build:custom": "bash build.sh",
