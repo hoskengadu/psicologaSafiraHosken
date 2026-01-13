@@ -20,6 +20,24 @@
       }
     }
 
+    .chamada-acao {
+      background: linear-gradient(135deg, rgba(107, 142, 174, 0.1), rgba(151, 169, 186, 0.1));
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-xl);
+      border-left: 4px solid var(--accent-primary);
+      max-width: 800px;
+      margin: 0 auto;
+
+      .chamada-texto {
+        font-size: var(--text-lg);
+        color: var(--text-primary);
+        line-height: var(--leading-relaxed);
+        margin: 0;
+        font-family: var(--font-family-primary);
+        white-space: pre-line;
+      }
+    }
+
     .section-subtitle {
       font-size: var(--text-lg);
       color: var(--text-secondary);

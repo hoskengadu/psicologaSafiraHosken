@@ -31,6 +31,48 @@
     }
   }
 
+  .publico-atendido {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(107, 142, 174, 0.05), rgba(151, 169, 186, 0.05));
+    border-radius: var(--radius-xl);
+    border-left: 4px solid var(--accent-primary);
+
+    h3 {
+      color: var(--accent-primary);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+      font-family: var(--font-family-display);
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: var(--text-lg);
+      margin: 0;
+      font-family: var(--font-family-primary);
+    }
+  }
+
+  .servicos-funcionamento {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(107, 142, 174, 0.05), rgba(151, 169, 186, 0.05));
+    border-radius: var(--radius-xl);
+    border-left: 4px solid var(--accent-primary);
+
+    .funcionamento-description {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: var(--font-family-primary);
+    }
+  }
+
   .servicos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -129,6 +171,35 @@
           font-weight: 500;
           width: 100%;
         }
+      }
+    }
+  }
+
+  .modalidades-detalhes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-4xl);
+
+    .modalidade {
+      background: var(--bg-secondary);
+      padding: var(--spacing-2xl);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--gray-200);
+      
+      h3 {
+        font-size: var(--text-xl);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-md);
+        font-family: var(--font-family-display);
+      }
+      
+      p {
+        color: var(--text-secondary);
+        line-height: var(--leading-relaxed);
+        font-family: var(--font-family-primary);
+        margin: 0;
       }
     }
   }
