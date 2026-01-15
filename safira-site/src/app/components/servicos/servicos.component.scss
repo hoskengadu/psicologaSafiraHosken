@@ -1,10 +1,27 @@
 .servicos-section {
-  padding: var(--spacing-4xl) 0;
+  padding: var(--spacing-3xl) 0;
+  background: var(--bg-primary);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .servicos-canva {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.servicos-content {
+  padding: var(--spacing-3xl) 0;
   background: var(--bg-primary);
 
   .section-header {
-    text-align: center;
-    margin-bottom: var(--spacing-4xl);
+    text-align: left;
+    margin-bottom: var(--spacing-2xl);
 
     .section-title {
       font-size: var(--text-4xl);
@@ -25,14 +42,14 @@
       font-size: var(--text-lg);
       color: var(--text-secondary);
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0;
       line-height: var(--leading-relaxed);
       font-family: var(--font-family-primary);
     }
   }
 
   .publico-atendido {
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--spacing-4xl);
     padding: var(--spacing-xl);
     background: linear-gradient(135deg, rgba(107, 142, 174, 0.05), rgba(151, 169, 186, 0.05));
@@ -56,7 +73,7 @@
   }
 
   .servicos-funcionamento {
-    text-align: center;
+    text-align: left;
     margin-bottom: var(--spacing-4xl);
     padding: var(--spacing-xl);
     background: linear-gradient(135deg, rgba(107, 142, 174, 0.05), rgba(151, 169, 186, 0.05));
@@ -68,7 +85,7 @@
       color: var(--text-secondary);
       line-height: var(--leading-relaxed);
       max-width: 800px;
-      margin: 0 auto;
+      margin: 0;
       font-family: var(--font-family-primary);
     }
   }
@@ -77,13 +94,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-4xl);
+    margin-bottom: var(--spacing-2xl);
 
     .servico-card {
       background: var(--bg-primary);
       border-radius: var(--radius-xl);
       padding: var(--spacing-2xl);
-      text-align: center;
+      text-align: left;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--gray-200);
       transition: all var(--transition-normal);
@@ -205,7 +222,7 @@
   }
 
   .cta-section {
-    text-align: center;
+    text-align: left;
     padding: var(--spacing-2xl);
     background: var(--gradient-soft);
     border-radius: var(--radius-2xl);
@@ -226,8 +243,8 @@
       font-family: var(--font-family-primary);
       font-size: var(--text-lg);
       max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .cta-button {

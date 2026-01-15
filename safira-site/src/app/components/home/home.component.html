@@ -1,60 +1,92 @@
-<section class="hero-section" role="banner" *ngIf="content$ | async as content">
+<!-- QUEM SOU EU -->
+<section class="section light" *ngIf="content$ | async as content">
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">
-          <span class="highlight">{{ content.home.title }}</span>
-        </h1>
-        <h2 class="hero-subtitle">{{ content.home.subtitle }}</h2>
-        <p class="hero-description">{{ content.home.description }}</p>
+    <h2>QUEM SOU EU?</h2>
+    <div class="content">
+      <img src="assets/safira-photo.jpeg" alt="Foto psicóloga" />
+      <p class="quote">
+        {{ content.sobre.content }}
+      </p>
+    </div>
+  </div>
+</section>
 
-        <div class="cta-buttons">
-          <a routerLink="/contato" class="btn btn-primary">
-            Agendar Consulta
-          </a>
-          <a routerLink="/sobre" class="btn btn-secondary">
-            Saiba Mais
-          </a>
-        </div>
+<!-- SOBRE A ANÁLISE -->
+<section class="section light subtle" *ngIf="content$ | async as content">
+  <div class="container">
+    <h2>SOBRE A ANÁLISE</h2>
+    <div class="content">
+      <p class="text">
+        {{ content.abordagem.content }}
+      </p>
+      <img src="assets/download.jpg" alt="Livros" />
+    </div>
+    <p class="handwriting">
+      {{ content.abordagem.citacao }}
+    </p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONAM OS ATENDIMENTOS -->
+<section class="section dark" *ngIf="content$ | async as content">
+  <div class="container">
+    <h2>COMO FUNCIONAM OS ATENDIMENTOS?</h2>
+    <div class="services-content">
+      <img src="assets/sobre-analise.JPG" alt="Atendimento psicológico" class="services-image" />
+      <div class="services-info">
+        <p class="info-title">{{ content.servicos.publicoAtendido }}</p>
+        <p class="info-text">{{ content.servicos.comoFuncionam }}</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="hero-image">
-        <div class="image-placeholder">
-          <div class="image-content">
-            <span class="image-icon">🌸</span>
-            <p>Espaço Acolhedor</p>
-          </div>
+<!-- TIPOS DE ATENDIMENTO -->
+<section class="section light" *ngIf="content$ | async as content">
+  <div class="container">
+    <h2>TIPOS DE ATENDIMENTO</h2>
+    <div class="services-grid">
+      <div class="service-card" 
+           *ngFor="let servico of content.servicos.items"
+           [class.has-image]="servico.image">
+        <img *ngIf="servico.image" 
+             [src]="'assets/' + servico.image" 
+             [alt]="servico.title"
+             class="service-image" />
+        <div class="service-content">
+          <h3>{{ servico.title }}</h3>
+          <p>{{ servico.description }}</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="features-section">
+<!-- CONTATO -->
+<section class="section dark contact centered" *ngIf="content$ | async as content">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Por que Escolher a <span class="highlight">Psicologia</span>?</h2>
-      <p class="section-subtitle">Descubra os benefícios de um acompanhamento psicológico profissional</p>
+    <div class="contact-wrapper">
+      <p class="cta">
+        {{ content.contato.chamadaAcao }}
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <span>📱</span>
+          <a href="https://wa.me/5521975366990">{{ content.contato.telefone }}</a>
+        </div>
+        <div class="contact-item">
+          <span>✉️</span>
+          <a href="mailto:safiralinhares.psi@gmail.com">{{ content.contato.email }}</a>
+        </div>
+      </div>
     </div>
-    
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">💝</div>
-        <h3 class="feature-title">Acolhimento</h3>
-        <p class="feature-description">Um espaço seguro e livre de julgamentos para você se expressar.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3 class="feature-title">Personalizado</h3>
-        <p class="feature-description">Abordagem única e personalizada para suas necessidades específicas.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">🌱</div>
-        <h3 class="feature-title">Crescimento</h3>
-        <p class="feature-description">Desenvolvimento pessoal e emocional para uma vida mais plena.</p>
-      </div>
+
+    <div class="copyright">
+      <p><strong>Safira Linhares Hosken</strong></p>
+      <p>Psicóloga Clínica</p>
+      <p>CRP: 05/69453</p>
+      <p style="margin-top: 1rem;">© 2026 Hosken Tecnologia - Todos os direitos reservados</p>
     </div>
   </div>
 </section>
