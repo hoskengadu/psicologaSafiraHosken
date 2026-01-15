@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "npm install && npm run build:prod",
+  "buildCommand": "npx ng build --configuration production",
   "outputDirectory": "dist/safira-site/browser",
   "installCommand": "npm install",
   "rewrites": [
