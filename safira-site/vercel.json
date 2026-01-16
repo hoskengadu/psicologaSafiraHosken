@@ -1,12 +1,24 @@
 {
-  "framework": null,
-  "buildCommand": "npx ng build --configuration production",
-  "outputDirectory": "dist/safira-site/browser",
+  "buildCommand": "npm run build:prod",
+  "outputDirectory": "dist/safira-site",
   "installCommand": "npm install",
-  "rewrites": [
+  "devCommand": "npm run start",
+  "functions": {
+    "api/**": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/dist/safira-site/browser/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/dist/safira-site/browser/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/safira-site/server/server.mjs"
     }
   ]
 }
